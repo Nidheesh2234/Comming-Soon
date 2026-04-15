@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* No scrollbars */
+    font-family: 'Lexend', sans-serif;
+    letter-spacing: 1px; /* Broader default spacing */
+    background: #020617; /* Very dark blue/black base */
+    color: white;
+}
+
+/* Motion blurred background color activity */
+.blur-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.blur-blob-1 {
+    width: 500px;
+    height: 500px;
+    background: #17366e; /* blue */
+    top: -100px;
+    left: -100px;
+    animation: floatBlobs 20s infinite ease-in-out alternate;
+}
+
+.blur-blob-2 {
+    width: 600px;
+    height: 600px;
+    background: #001f3f; /* dark blue */
+    bottom: -150px;
+    right: -100px;
+    animation: floatBlobs2 25s infinite ease-in-out alternate-reverse;
+}
+
+.blur-blob-3 {
+    width: 400px;
+    height: 400px;
+    background: #4a7acc; /* lighter blue */
+    top: 40%;
+    left: 40%;
+    animation: floatBlobs 18s infinite ease-in-out alternate;
+}
+
+.blur-blob-4 {
+    width: 350px;
+    height: 350px;
+    background: #2563eb; /* royal blue */
+    bottom: 20%;
+    left: 10%;
+    animation: floatBlobs2 22s infinite ease-in-out alternate;
+}
+
+.blur-blob-5 {
+    width: 450px;
+    height: 450px;
+    background: #1e3a8a; /* deep blue */
+    top: 10%;
+    right: 20%;
+    animation: floatBlobs 15s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes floatBlobs {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(120px, -80px) scale(1.2); }
+    66% { transform: translate(-60px, 120px) scale(0.8); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes floatBlobs2 {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-100px, 100px) scale(0.9); }
+    66% { transform: translate(150px, -50px) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1.3); }
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+}
+
+/* Main Content Wrapper */
+.content-container {
+    position: relative;
+    z-index: 2; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 60px;
+}
+
+/* Typography styles */
+.main-title {
+    margin-top: 20px;
+    z-index: 10;
+}
+
+.main-title h1 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 18vw; /* Enlarged size */
+    line-height: 0.9;
+    letter-spacing: 0.5vw; /* Broadened spacing */
+    font-weight: 400; /* Reduced thickness */
+    text-transform: uppercase;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.main-title .soon {
+    margin-left: 0;
+}
+
+/* Bottom Section Grid */
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 20px; 
+}
+
+/* Vertical Scrolling Quotes */
+.quotes-container {
+    height: 60px; 
+    overflow: hidden;
+    position: relative;
+    width: 320px;
+    z-index: 10;
+}
+
+.scrolling-quotes {
+    display: flex;
+    flex-direction: column;
+    animation: scrollVertical 15s linear infinite;
+}
+
+.scrolling-quotes p {
+    font-size: 1.1rem;
+    font-weight: 300; /* Reduced from 600 */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px; 
+    white-space: normal;
+    color: #e0e6fb;
+    min-height: 60px; 
+    display: flex;
+    align-items: center;
+}
+
+@keyframes scrollVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-75%); } 
+}
+
+/* Mailing List Form */
+.mailing-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 320px;
+    background: transparent;
+    padding: 15px 20px; 
+    border-radius: 12px;
+    z-index: 10;
+}
+
+.mailing-list p {
+    font-size: 0.9rem;
+    font-weight: 400; /* Reduced from 600 */
+    letter-spacing: 1px;
+}
+
+.input-group {
+    width: 100%;
+}
+
+#emailInput {
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    color: white;
+    font-family: 'Lexend', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#emailInput::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#emailInput:focus {
+    border-color: #8bb2ff;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.checkbox-group label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button#submitBtn {
+    padding: 8px 18px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 6px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 400; /* Reduced from 600 */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button#submitBtn:hover {
+    background: white;
+    color: #17366e;
+}
+
+.form-message {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    min-height: 15px; 
+}
+.message-success { color: #4ade80; }
+.message-error { color: #f87171; }
+
+/* Social Links */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: right;
+    z-index: 10;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300; /* Reduced from 600 */
+    transition: color 0.3s ease;
+    letter-spacing: 1.5px;
+}
+
+.social-links a:hover {
+    color: #8bb2ff;
+}
+
+/* Success Popup Animation */
+.success-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 4, 15, 0.85); 
+    backdrop-filter: blur(15px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.success-popup.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.success-content {
+    background: linear-gradient(135deg, rgba(23, 54, 110, 0.9) 0%, rgba(0, 31, 63, 0.9) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px 60px;
+    border-radius: 20px;
+    text-align: center;
+    transform: scale(0.8) translateY(20px);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.success-popup.active .success-content {
+    transform: scale(1) translateY(0);
+}
+
+.icon-wrap {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.success-content h2 {
+    font-size: 2rem;
+    font-weight: 400; /* Reduced from 800 */
+    letter-spacing: 4px;
+    color: #4ade80;
+    margin-bottom: 10px;
+}
+
+.success-content p {
+    font-size: 1.1rem;
+    font-weight: 300; /* Reduced from 600 */
+    letter-spacing: 1px;
+    color: #e0e6fb;
+    margin-bottom: 30px;
+}
+
+.success-content button {
+    padding: 10px 30px;
+    background: white;
+    color: #001f3f;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 400; /* Reduced from 700 */
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.success-content button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .main-title h1 { font-size: 15vw; }
+    .bottom-section { flex-wrap: wrap; justify-content: center; gap: 20px; align-items: center; }
+    .content-container { padding: 20px; }
+    .mailing-list { order: 3; width: 100%; margin-top: 10px; }
+    .social-links { text-align: center; flex-direction: column; justify-content: center; width: 100%; gap: 10px; }
+    .quotes-container { text-align: center; width: 100%; }
+    .success-content { padding: 30px 20px; }
+    .success-content h2 { font-size: 1.5rem; }
+    .success-content p { font-size: 0.9rem; }
+}

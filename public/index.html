@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabSphere - Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for sleek typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Motion blurred color activity -->
+    <div class="blur-blob blur-blob-1"></div>
+    <div class="blur-blob blur-blob-2"></div>
+    <div class="blur-blob blur-blob-3"></div>
+    <div class="blur-blob blur-blob-4"></div>
+    <div class="blur-blob blur-blob-5"></div>
+
+    <!-- Background Container for Particles -->
+    <div id="particles-js"></div>
+
+    <!-- Main Container -->
+    <main class="content-container">
+        <!-- Huge COMING SOON text -->
+        <div class="main-title">
+            <h1 class="coming">COMING</h1>
+            <h1 class="soon">SOON</h1>
+        </div>
+
+        <div class="bottom-section">
+            <!-- Left: Scrolling Quotations -->
+            <div class="quotes-container">
+                <div class="scrolling-quotes">
+                    <p>Collaboration is changing forever</p>
+                    <p>Collaboration WILL GET ITS OWN BRAIN</p>
+                    <p>COLLABORATION IS GETTING ITS SUPERCHARGE</p>
+                    <!-- Duplicated for seamless loop -->
+                    <p>Collaboration is changing forever</p>
+                    <p>Collaboration WILL GET ITS OWN BRAIN</p>
+                    <p>COLLABORATION IS GETTING ITS SUPERCHARGE</p>
+                </div>
+            </div>
+
+            <!-- Center: Mailing List Form -->
+            <div class="mailing-list">
+                <p>Join our Mailing List</p>
+                <form id="subscribeForm" name="mailing-list" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="mailing-list" />
+                    <p class="hidden" style="display: none;">
+                        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+                    <div class="input-group">
+                        <input type="email" id="emailInput" name="email" placeholder="Email *" required>
+                    </div>
+                    <div class="input-group checkbox-group">
+                        <input type="checkbox" id="newsletterCheck" required>
+                        <label for="newsletterCheck">Yes, subscribe me to your newsletter. *</label>
+                    </div>
+                    <button type="submit" id="submitBtn">Subscribe</button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+
+            <!-- Right: Social Links -->
+            <div class="social-links">
+                <a href="mailto:collab.sphere.social@gmail.com" target="_blank" rel="noopener noreferrer">collab.sphere.social@gmail.com</a>
+                <a href="https://www.instagram.com/collab_sphere56/" target="_blank" rel="noopener noreferrer">www.instagram.com/collab_sphere56/</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Popup (Hidden by default) -->
+    <div id="successPopup" class="success-popup">
+        <div class="success-content">
+            <div class="icon-wrap">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+            <h2>SUCCESS!</h2>
+            <p>YOU WILL BE FIRST IN THE QUEUE</p>
+            <button id="closePopupBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+[build]
+  publish = "public"
+  # No build command necessary since it's vanilla HTML/CSS/JS
+
+# This ensures routing works if you ever add extra pages
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
